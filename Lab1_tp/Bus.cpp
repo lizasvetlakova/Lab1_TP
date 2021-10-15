@@ -7,6 +7,7 @@ Bus::Bus() {
 	final_point = "";
 	cout << "Сработал конструктор без параметров объекта автобус" << endl;
 }
+
 int Bus::get_seats() { return seats; }
 int Bus::get_total() { return total_seats; }
 string Bus::get_point() { return final_point; }

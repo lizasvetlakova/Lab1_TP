@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Garage.h"
-#include "Base.h"//
+#include "Base.h"
 #include <iostream>
 
 class Bike : public Base {

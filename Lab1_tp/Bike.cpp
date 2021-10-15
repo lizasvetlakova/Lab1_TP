@@ -7,6 +7,7 @@ Bike::Bike() {
 	area = "";
 	cout << "Сработал конструктор без параметров объекта мотоцикл" << endl;
 }
+
 int Bike::get_vol_b() { return volume; }
 int Bike::get_pwr() { return power; }
 string Bike::get_area() { return area; }

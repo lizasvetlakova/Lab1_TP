@@ -3,7 +3,6 @@
 #include "Base.h"//
 #include <iostream>
 
-
 class Car : public Base {
 	Garage tr;
 	int volume;

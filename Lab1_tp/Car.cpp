@@ -7,6 +7,7 @@ Car::Car() {
 	color = type = "";
 	cout << "Сработал конструктор без параметров объекта автомобиль" << endl;
 }
+
 int Car::get_vol() { return volume; }
 string Car::get_color() { return color; }
 string Car::get_type() { return type; }
