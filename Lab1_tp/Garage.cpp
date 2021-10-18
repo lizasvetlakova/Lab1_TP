@@ -1,18 +1,18 @@
 ﻿#include "Garage.h"
 
 Garage::Garage() {
-	brand = "Null";
-	model = "Null";
+	brand = "None";
+	model = "None";
 }
-Garage::Garage(string &newBrand, string &newModel) {
-	this->set_brand(newBrand);
-	this->set_model(newModel);
+Garage::Garage(string &Brand, string &Model) {
+	this->set_brand(Brand);
+	this->set_model(Model);
 }
-void Garage::set_brand(string &newBrand) {
-	brand = newBrand;
+void Garage::set_brand(string &Brand) {
+	brand = Brand;
 }
-void Garage::set_model(string &newModel) {
-	model = newModel;
+void Garage::set_model(string &Model) {
+	model = Model;
 }
 string Garage::get_brand() { return brand; }
 string Garage::get_model() { return model; }

@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef GARAGE_H
+#define GARAGE_H
 #include <string>
 
 using namespace std;
@@ -8,12 +9,13 @@ class Garage {
 	string model;
 public:
 	Garage();
-	Garage(string &newBrand, string &newModel);
+	Garage(string &Brand, string &Model);
 	~Garage() {};
 
-	void set_brand(string &newBrand);
-	void set_model(string &newModel);
+	void set_brand(string &Brand);
+	void set_model(string &Model);
 
 	string get_brand();
 	string get_model();
 };
+#endif 
