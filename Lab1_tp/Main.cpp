@@ -62,7 +62,6 @@ int main(void) {
 }
 
 void Add(Keeper& kpr) {
-	//Base* mas[3] = { new Car, new Bike, new Bus }; //массив указателей 
 	Base* ptr; //ptr - указатель на объект
 	bool flag = 1;
 	int c = 0;
