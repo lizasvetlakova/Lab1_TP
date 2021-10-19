@@ -15,7 +15,6 @@ public:
 	Keeper();
 	~Keeper();
 
-	Element* get_head();
 	int get_size();
 
 	void insert(Base& val); //добавление

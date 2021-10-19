@@ -18,10 +18,6 @@ Keeper::~Keeper() {
 	}
 }
 
-Element* Keeper::get_head() {
-	return head;
-}
-
 int Keeper::get_size() {
 	return size;
 }
