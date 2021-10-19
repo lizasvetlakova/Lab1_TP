@@ -7,14 +7,10 @@ Keeper::Keeper() {
 
 Keeper::~Keeper() {
 	if (size == 0) { return;}
-	Element* buf = head;
-	while (buf->next != nullptr)
-	{
-		Element* tmp = buf;
-		tmp->value->~Base();
-		delete tmp->value; //
-		delete tmp;
-		buf = buf->next;
+	while (head != NULL){
+		Element* buf = head;
+		head = buf->next;
+		delete buf;
 	}
 }
 
