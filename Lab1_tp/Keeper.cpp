@@ -45,38 +45,30 @@ void Keeper::insert(Base& val) {
 }
 
 void Keeper::remove(int index) {
-	try {
-		if (index >= size || index < 0) {
-			throw "\nError: Wrong index";
-		}
-		if (size == 0) { 
-			throw "\nError: Kepeer is empty";
-		}
-		if (size == 1) {
-			this->erase();
-			return;
-		}
-		Element* tmp = head;
-		Element* prev = head;
-
-		for (int i = 0; i < index; i++) {
-			prev = tmp;
-			tmp = tmp->next;
-		}
-		if (tmp == prev) { //когда удаляем первый элемент = tmp
-			head = tmp->next;
-		}
-		else {
-			prev->next = tmp->next; //предыдущий ссылается на следующий за удаляемым элементом
-		}
-		tmp->value->~Base();
-		delete tmp->value;
-		delete tmp;
-		size--;
+	if (index >= size || index < 0) {
+		throw "\nОшибка: объекта с таким индексом не существует!";
 	}
-	catch (const char* exc) {
-		cout << exc << endl;
+	if (size == 1) {
+		this->erase();
+		return;
 	}
+	Element* tmp = head;
+	Element* prev = head;
+	
+	for (int i = 0; i < index; i++) {
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	if (tmp == prev) { //когда удаляем первый элемент = tmp
+		head = tmp->next;
+	}
+	else {
+		prev->next = tmp->next; //предыдущий ссылается на следующий за удаляемым элементом
+	}
+	tmp->value->~Base();
+	delete tmp->value;
+	delete tmp;
+	size--;
 }
 
 void Keeper::erase() {
@@ -93,18 +85,13 @@ void Keeper::erase() {
 }
 
 Base& Keeper::operator[] (const int index) {
-	try {
-		if (index >= size || index < 0) {
-			throw "\nError: Wrong index";
-		}
-		Element* buf= head;
-		for (int i = 0; i < index; i++)
-		{
-			buf = buf->next;
-		}
-		return *(buf->value);
+	if (index >= size || index < 0) {
+		throw "\nОшибка: объекта с таким индексом не существует!";
 	}
-	catch (const char* exc) {
-		cout << exc << endl;
+	Element* buf= head;
+	for (int i = 0; i < index; i++)
+	{
+		buf = buf->next;
 	}
+	return *(buf->value);
 }

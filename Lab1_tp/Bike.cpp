@@ -45,12 +45,10 @@ string Bike::get_area() {
 }
 
 void Bike::print() {
-	cout << "Мотоцикл" << endl << endl
-		<< "Марка: " << tr2.get_brand() << endl
-		<< "Модель: " << tr2.get_model() << endl
-		<< "Объём двигателя (л): " << volume << endl
-		<< "Мощность двигаетеля(л.с.): " << power << endl
-		<< "Местность: " << area << endl;
+	cout << "Мотоцикл " << tr2.get_brand() << " " << tr2.get_model() << endl
+		<< "\tОбъём двигателя (л): " << volume << endl
+		<< "\tМощность двигаетеля(л.с.): " << power << endl
+		<< "\tМестность: " << area << endl;
 }
 void Bike::change() {
 	string s = "";

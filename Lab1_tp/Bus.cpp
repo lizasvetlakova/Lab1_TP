@@ -45,15 +45,13 @@ string Bus::get_point() {
 }
 
 void Bus::print() {
-	cout << "Автобус" << endl << endl
-		<< "Марка: " << tr1.get_brand() << endl
-		<< "Модель: " << tr1.get_model() << endl
-		<< "Кол-во сидячих мест: " << seats << endl
-		<< "Общее кол-во мест " << total_seats << endl
-		<< "Конечный пункт: " << final_point << endl;
+	cout << "Автобус " << tr1.get_brand() << " " << tr1.get_model() << endl
+		<< "\tКол-во сидячих мест: " << seats << endl
+		<< "\tОбщее кол-во мест " << total_seats << endl
+		<< "\tКонечный пункт: " << final_point << endl;
 }
 void Bus::change() {
-		string s = "";
+		string s = " ";
 		cout << endl << "Введите марку: ";
 		getline(cin, s);
 		tr1.set_brand(s);

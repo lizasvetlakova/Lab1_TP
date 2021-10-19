@@ -45,15 +45,13 @@ string Car::get_type() {
 }
 
 void Car::print() {
-	cout << "Автомобиль" << endl << endl
-		<< "Марка: " << tr.get_brand() << endl
-		<< "Модель: " << tr.get_model() << endl
-		<< "Объём двигателя (л): " << volume << endl
-		<< "Цвет: " << color << endl
-		<< "Тип КПП: " << type << endl;
+	cout << "Автомобиль " << tr.get_brand() << " " << tr.get_model() << endl
+		<< "\tОбъём двигателя (л): " << volume << endl
+		<< "\tЦвет: " << color << endl
+		<< "\tТип КПП: " << type << endl;
 }
 void Car::change() {
-	string s = "";
+	string s;
 	cout << endl << "Введите марку: ";
 	getline(cin, s);
 	tr.set_brand(s);
