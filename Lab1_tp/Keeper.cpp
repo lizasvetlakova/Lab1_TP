@@ -42,7 +42,7 @@ void Keeper::insert(Base& val) {
 
 void Keeper::remove(int index) {
 	if (index >= size || index < 0) {
-		throw "\nОшибка: объекта с таким индексом не существует!";
+		throw "\nОшибка: объекта с таким номером не существует!";
 	}
 	if (size == 1) {
 		this->erase();
@@ -82,7 +82,7 @@ void Keeper::erase() {
 
 Base& Keeper::operator[] (const int index) {
 	if (index >= size || index < 0) {
-		throw "\nОшибка: объекта с таким индексом не существует!";
+		throw "\nОшибка: объекта с таким номером не существует!";
 	}
 	Element* buf= head;
 	for (int i = 0; i < index; i++)

@@ -106,6 +106,7 @@ void Delete(Keeper& kpr) {
 	system("cls");
 	cout << "\nВведите номер объекта, который нужно удалить >> ";
 	cin >> i;
+	i -= 1;
 	try {
 		kpr.remove(i);
 	}
@@ -122,7 +123,7 @@ void Print(Keeper& kpr) {
 	}
 	system("cls");
 	for (int i = 0; i < kpr.get_size(); i++) {
-		cout << "#" << i << " ";
+		cout << "#" << i + 1 << " ";
 		kpr[i].print();
 		cout << endl << endl;
 	}
@@ -137,6 +138,7 @@ void Change(Keeper& kpr) {
 	system("cls");
 	cout << "\nВведите номер объекта, данные которого нужно изменить >> ";
 	cin >> i;
+	i -= 1;
 	try {
 		kpr[i].change();
 	}
