@@ -44,7 +44,7 @@ string Car::get_type() {
 	return type; 
 }
 
-void Car::Print() {
+void Car::print() {
 	cout << "Автомобиль" << endl << endl
 		<< "Марка: " << tr.get_brand() << endl
 		<< "Модель: " << tr.get_model() << endl
@@ -52,7 +52,7 @@ void Car::Print() {
 		<< "Цвет: " << color << endl
 		<< "Тип КПП: " << type << endl;
 }
-void Car::Change() {
+void Car::change() {
 	string s = "";
 	cout << endl << "Введите марку: ";
 	getline(cin, s);

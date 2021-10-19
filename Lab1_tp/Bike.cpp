@@ -44,7 +44,7 @@ string Bike::get_area() {
 	return area; 
 }
 
-void Bike::Print() {
+void Bike::print() {
 	cout << "Мотоцикл" << endl << endl
 		<< "Марка: " << tr2.get_brand() << endl
 		<< "Модель: " << tr2.get_model() << endl
@@ -52,7 +52,7 @@ void Bike::Print() {
 		<< "Мощность двигаетеля(л.с.): " << power << endl
 		<< "Местность: " << area << endl;
 }
-void Bike::Change() {
+void Bike::change() {
 	string s = "";
 	cout << endl << "Введите марку: ";
 	getline(cin, s);

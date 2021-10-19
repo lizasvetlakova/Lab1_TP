@@ -13,8 +13,8 @@ public:
 	Bus();
 	~Bus();
 
-	virtual void Print() override;
-	virtual void Change() override;
+	virtual void print() override;
+	virtual void change() override;
 
 	void set_brand(string& Brand);
 	void set_model(string& Model);
