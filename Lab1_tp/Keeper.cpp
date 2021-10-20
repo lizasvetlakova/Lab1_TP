@@ -91,3 +91,45 @@ Base& Keeper::operator[] (const int index) {
 	}
 	return *(buf->value);
 }
+
+void Keeper::save() {
+	ofstream out("kpr.txt");
+	if (!out.is_open()) {
+		throw "\nОшибка: не удалось открыть файл";
+	}
+	Element* buf = head;
+	for (int i = 0; i < size; i++) {
+		/*
+		out << buf->value->getinfo() << endl; getinfo даёт информацию, которую запишем в файл
+		buf = buf->next;
+		...
+		нужен номер объекта! 
+		убрать явный вызов конструктора гаража
+		*/
+	}
+	out.close();
+}
+
+void Keeper::upload() {
+	ifstream in("kpr.txt");
+	if (!in.is_open()) {
+		throw "\nОшибка: не удалось открыть файл";
+	}
+	string line;
+	while (getline(in, line)) {
+		Element* tmp = new Element;
+		int N = atoi(line.c_str());
+		if (N == 1) { tmp->value = new Car; }
+		else if (N == 2) { tmp->value = new Bike; }
+		else if (N == 3) { tmp->value = new Bus; }
+		else { in.close(); return; }
+		/*
+		string T = tmp->value->setinfo(in); setinfo устанавливает всю инфу из файла
+		*/
+
+		insert(*(tmp->value)); //добавляем объект в контейнер
+		delete tmp->value;
+		delete tmp;
+	}
+	in.close();
+}

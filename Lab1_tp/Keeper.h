@@ -1,6 +1,10 @@
 ﻿#ifndef KEEPER_H
 #define KEEPER_H
 #include "Base.h"
+#include "Car.h"
+#include "Bike.h"
+#include "Bus.h"
+#include <fstream>
 
 struct Element
 {
@@ -20,6 +24,8 @@ public:
 	void insert(Base& val); //добавление
 	void remove(int index); //удаление
 	void erase();           //отчистка
+	void save();            //сохранение в файл
+	void upload();          //загрузка из файла
 
 	Base& operator[] (const int index); //оператор индексации
 };

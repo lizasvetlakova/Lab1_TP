@@ -1,0 +1,12 @@
+1
+BMV
+X6
+27
+red
+auto
+1
+Kia
+Sorento
+15
+blue
+mechanical

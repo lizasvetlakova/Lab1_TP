@@ -1,5 +1,4 @@
 ﻿#include "Libs.h"
-#include <fstream>
 
 using namespace std;
 
@@ -15,8 +14,7 @@ int main(void) {
 	Keeper kpr;
 
 	try{
-		//загрузка keeper из файла
-		//в функции бросить исключение
+		kpr.upload();
 	}
 	catch (const char* exc) {
 		cout << exc << endl;
@@ -52,8 +50,7 @@ int main(void) {
 	}
 
 	try {
-		//сохранение keeper в файл
-		//в функции бросить исключение
+		kpr.save();
 	}
 	catch (const char* exc) {
 		cout << exc << endl;
