@@ -44,11 +44,13 @@ string Car::get_type() {
 	return type; 
 }
 
-void Car::print() {
-	cout << "Автомобиль " << tr.get_brand() << " " << tr.get_model() << endl
-		<< "   Объём двигателя (л): " << volume << endl
-		<< "   Цвет: " << color << endl
-		<< "   Тип КПП: " << type << endl;
+string Car::info() {
+	string line;
+	line += "Автомобиль " + tr.get_brand() + " " + tr.get_model();
+	line += "\nОбъём двигателя (л): " + volume;
+	line += "\nЦвет: " + color;
+	line += "\nТип КПП: " + type;
+	return line;
 }
 void Car::change() {
 	string s;

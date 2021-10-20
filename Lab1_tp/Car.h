@@ -13,7 +13,7 @@ public:
 	Car();
 	~Car();
 
-	virtual void print() override;
+	virtual string info() override;
 	virtual void change() override;
 
 	void set_brand(string& Brand);
