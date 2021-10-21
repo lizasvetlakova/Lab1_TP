@@ -99,13 +99,8 @@ void Keeper::save() {
 	}
 	Element* buf = head;
 	for (int i = 0; i < size; i++) {
-		/*
-		out << buf->value->getinfo() << endl; getinfo даёт информацию, которую запишем в файл
+		out << buf->value->getinfo() << endl; 
 		buf = buf->next;
-		...
-		нужен номер объекта! 
-		убрать явный вызов конструктора гаража
-		*/
 	}
 	out.close();
 }
@@ -122,13 +117,9 @@ void Keeper::upload() {
 		if (N == 1) { tmp->value = new Car; }
 		else if (N == 2) { tmp->value = new Bike; }
 		else if (N == 3) { tmp->value = new Bus; }
-		else { in.close(); return; }
-		/*
-		string T = tmp->value->setinfo(in); setinfo устанавливает всю инфу из файла
-		*/
-
+		else break; 
+		tmp->value->setinfo(in); //добавляем инфо об объекте
 		insert(*(tmp->value)); //добавляем объект в контейнер
-		delete tmp->value;
 		delete tmp;
 	}
 	in.close();

@@ -6,7 +6,6 @@ Bus::~Bus() {
 }
 
 Bus::Bus() {
-	Garage();
 	seats = total_seats = "Null";
 	final_point = "None";
 	cout << "Сработал конструктор объекта автобус" << endl;
@@ -44,24 +43,36 @@ string Bus::get_point() {
 	return final_point; 
 }
 
-string Bus::info() {
-	string line;
-	line += "Автобус " + tr1.get_brand() + " " + tr1.get_model();
-	line += "\nКол-во сидячих мест: " + seats;
-	line += "\nОбщее кол-во мест: " + total_seats;
-	line += "\nКонечный пункт: " + final_point;
+string Bus::getinfo() {
+	string line = "3\n";
+	line += get_brand() + "\n" + get_model();
+	line += "\n" + seats + "\n" + total_seats + "\n" + final_point;
 	return line;
+}
+
+void Bus::setinfo(ifstream& in) {
+	string s;
+	getline(in, s);
+	set_brand(s);
+	getline(in, s);
+	set_model(s);
+	getline(in, s);
+	set_seats(s);
+	getline(in, s);
+	set_total(s);
+	getline(in, s);
+	set_point(s);
 }
 
 void Bus::change() {
 		string s = " ";
 		cout << endl << "Введите марку: ";
 		cin >> s;
-		tr1.set_brand(s);
+		set_brand(s);
 
 		cout << endl << "Введите модель: ";
 		cin >> s;
-		tr1.set_model(s);
+		set_model(s);
 
 		cout << endl << "Введите кол-во сидячих мест: ";
 		cin >> s;
@@ -74,4 +85,12 @@ void Bus::change() {
 		cout << endl << "Введите конечный пункт: ";
 		cin >> s;
 		final_point = s;
+}
+
+void Bus::print() {
+	cout << " Автобус " << get_brand()
+		<< " " << get_model()
+		<< "\n   Кол-во сидячих мест: " << seats
+		<< "\n   Общее кол-во мест: " << total_seats
+		<< "\n   Конечный пункт: " + final_point << endl << endl;
 }

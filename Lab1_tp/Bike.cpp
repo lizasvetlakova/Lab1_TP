@@ -6,7 +6,6 @@ Bike::~Bike() {
 }
 
 Bike::Bike() {
-	Garage();
 	volume = power = "Null";
 	area = "None";
 	cout << "Сработал конструктор объекта мотоцикл" << endl;
@@ -44,24 +43,36 @@ string Bike::get_area() {
 	return area; 
 }
 
-string Bike::info() {
-	string line;
-	line += "Мотоцикл " + tr2.get_brand() + " " + tr2.get_model();
-	line += "\nОбъём двигателя (л): " + volume;
-	line += "\nМощность двигаетеля(л.с.): " + power;
-	line += "\nМестность: " + area;
+string Bike::getinfo() {
+	string line = "2\n";
+	line += get_brand() + "\n" + get_model();
+	line += "\n" + volume + "\n" + power + "\n" + area;
 	return line;
+}
+
+void Bike::setinfo(ifstream& in) {
+	string s;
+	getline(in, s);
+	set_brand(s);
+	getline(in, s);
+	set_model(s);
+	getline(in, s);
+	set_volume(s);
+	getline(in, s);
+	set_power(s);
+	getline(in, s);
+	set_area(s);
 }
 
 void Bike::change() {
 	string s = "";
 	cout << endl << "Введите марку: ";
 	cin >> s;
-	tr2.set_brand(s);
+	set_brand(s);
 
 	cout << endl << "Введите модель: ";
 	cin >> s;
-	tr2.set_model(s);
+	set_model(s);
 
 	cout << endl << "Введите объём двигателя(л): ";
 	cin >> s;
@@ -74,4 +85,12 @@ void Bike::change() {
 	cout << endl << "Введите местность: ";
 	cin >> s;
 	area = s;
+}
+
+void Bike::print() {
+	cout << " Мотоцикл " << get_brand()
+		<< " " << get_model()
+		<< "\n   Объём двигателя (л): " << volume
+		<< "\n   Мощность двигаетеля(л.с.): " << power
+		<< "\n   Местность: " + area << endl << endl;
 }

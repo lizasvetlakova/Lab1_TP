@@ -2,7 +2,6 @@
 #define BIKE_H
 #include "Garage.h"
 #include "Base.h"
-#include <iostream>
 
 class Bike : public Base {
 	Garage tr2;
@@ -13,8 +12,10 @@ public:
 	Bike();
 	~Bike();
 
-	virtual string info() override;
+	virtual string getinfo() override;
+	virtual void setinfo(ifstream& in) override;
 	virtual void change() override;
+	virtual void print() override;
 
 	void set_brand(string& Brand);
 	void set_model(string& Model);

@@ -121,7 +121,8 @@ void Print(Keeper& kpr) {
 	}
 	system("cls");
 	for (int i = 0; i < kpr.get_size(); i++) {
-		cout << "#" << i + 1 << " " << kpr[i].info() << endl << endl;
+		cout << "#" << i + 1;
+		kpr[i].print();
 	}
 }
 

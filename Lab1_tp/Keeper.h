@@ -4,7 +4,6 @@
 #include "Car.h"
 #include "Bike.h"
 #include "Bus.h"
-#include <fstream>
 
 struct Element
 {

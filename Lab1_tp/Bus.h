@@ -2,7 +2,6 @@
 #define BUS_H
 #include "Garage.h"
 #include "Base.h"
-#include <iostream>
 
 class Bus : public Base {
 	Garage tr1;
@@ -13,8 +12,10 @@ public:
 	Bus();
 	~Bus();
 
-	virtual string info() override;
+	virtual string getinfo() override;
+	virtual void setinfo(ifstream& in)override;
 	virtual void change() override;
+	virtual void print() override;
 
 	void set_brand(string& Brand);
 	void set_model(string& Model);

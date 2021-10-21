@@ -6,7 +6,6 @@ Car::~Car() {
 }
 
 Car::Car() {
-	Garage();
 	volume = "Null";
 	color = type = "None";
 	cout << "Сработал конструктор объекта автомобиль" << endl;
@@ -44,23 +43,36 @@ string Car::get_type() {
 	return type; 
 }
 
-string Car::info() {
-	string line;
-	line += "Автомобиль " + tr.get_brand() + " " + tr.get_model();
-	line += "\nОбъём двигателя (л): " + volume;
-	line += "\nЦвет: " + color;
-	line += "\nТип КПП: " + type;
+string Car::getinfo() {
+	string line = "1\n";
+	line += get_brand() + "\n" + get_model();
+	line += "\n" + volume + "\n" + color + "\n" + type;
 	return line;
 }
+
+void Car::setinfo(ifstream& in) {
+	string s;
+	getline(in, s);
+	set_brand(s);
+	getline(in, s);
+	set_model(s);
+	getline(in, s);
+	set_volume(s);
+	getline(in, s);
+	set_color(s);
+	getline(in, s);
+	set_type(s);
+}
+
 void Car::change() {
 	string s;
 	cout << endl << "Введите марку: ";
 	cin >> s;
-	tr.set_brand(s);
+	set_brand(s);
 
 	cout << endl << "Введите модель: ";
 	cin >> s;
-	tr.set_model(s);
+	set_model(s);
 
 	cout << endl << "Введите объём двигателя(л): ";
 	cin >> s;
@@ -73,4 +85,12 @@ void Car::change() {
 	cout << endl << "Введите тип КПП: ";
 	cin >> s;
 	type = s;
+}
+
+void Car::print() {
+	cout << " Автомобиль " << get_brand()
+		<< " " << get_model()
+		<< "\n   Объём двигателя (л): " << volume
+		<< "\n   Цвет: " << color
+		<< "\n   Тип КПП: " + type << endl << endl;
 }
