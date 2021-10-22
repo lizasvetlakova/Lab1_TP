@@ -145,6 +145,7 @@
     <ClInclude Include="Garage.h" />
     <ClInclude Include="Keeper.h" />
     <ClInclude Include="Libs.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bike.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Garage.cpp" />
     <ClCompile Include="Keeper.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="kpr.txt" />
