@@ -3,13 +3,14 @@
 void Add(Keeper& kpr) {
 	Base* ptr = nullptr; //ptr - указатель на объект
 	bool flag = 1;
-	int c = 0;
+	int c;
 	string b, m, v, k, t;
 	while (flag) {
 		system("cls");
 		cout << "1. Автомобиль\n2. Мотоцикл\n3. Автобус\n4. Вернуться в меню\n";
 		cout << "\nВыберите какой объект добавить >> ";
-		cin >> c;
+		cin >> b;
+		c = atoi(b.c_str());
 		if (c < 1 || c > 4) {
 			cout << "\nОшибка при выборе!\n";
 			break;
@@ -63,10 +64,12 @@ void Delete(Keeper& kpr) {
 		cout << "Контейнер пуст!" << endl;
 		return;
 	}
+	string s;
 	int i = 0;
 	system("cls");
 	cout << "Введите номер объекта, который нужно удалить >> ";
-	cin >> i;
+	cin >> s;
+	i = atoi(s.c_str());
 	i -= 1;
 	cout << endl;
 	try {
@@ -95,10 +98,12 @@ void Change(Keeper& kpr) {
 		cout << "Контейнер пуст!" << endl;
 		return;
 	}
+	string s;
 	int i = 0;
 	system("cls");
 	cout << "Введите номер объекта, данные которого нужно изменить >> ";
-	cin >> i;
+	cin >> s;
+	i = atoi(s.c_str());
 	i -= 1;
 	try {
 		cout << endl << "Текущие данные объекта:\n  ";
