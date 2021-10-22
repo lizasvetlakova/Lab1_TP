@@ -10,6 +10,8 @@ class Bike : public Base {
 	string area;
 public:
 	Bike();
+	Bike(string& B, string& M, string& V, string& P, string& A);
+	Bike(const Bike& bike);
 	~Bike();
 
 	virtual string getinfo() override;

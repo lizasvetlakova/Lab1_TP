@@ -1,6 +1,7 @@
 ﻿#ifndef GARAGE_H
 #define GARAGE_H
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -9,8 +10,8 @@ class Garage {
 	string model;
 public:
 	Garage();
-	Garage(string &Brand, string &Model);
-	~Garage() {};
+	Garage(const Garage& g);
+	~Garage();
 
 	void set_brand(string &Brand);
 	void set_model(string &Model);

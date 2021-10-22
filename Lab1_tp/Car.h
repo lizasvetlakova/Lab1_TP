@@ -10,6 +10,8 @@ class Car : public Base {
 	string type;
 public:
 	Car();
+	Car(string& B, string& M, string& V, string& C, string& T);
+	Car(const Car& car);
 	~Car();
 
 	virtual string getinfo() override;

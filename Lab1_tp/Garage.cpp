@@ -1,12 +1,15 @@
 ﻿#include "Garage.h"
 
+Garage::~Garage() { cout << "Сработал деструктор класса Garage" << endl; }
+
 Garage::Garage() {
 	brand = "None";
 	model = "None";
+	cout << "Сработал конструктор класса Garage" << endl;
 }
-Garage::Garage(string &Brand, string &Model) {
-	this->set_brand(Brand);
-	this->set_model(Model);
+Garage::Garage(const Garage& g) {
+	brand = g.brand;
+	model = g.model;
 }
 void Garage::set_brand(string &Brand) {
 	brand = Brand;

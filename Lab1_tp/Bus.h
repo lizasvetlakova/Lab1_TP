@@ -10,6 +10,8 @@ class Bus : public Base {
 	string final_point;
 public:
 	Bus();
+	Bus(string& B, string& M, string& S, string& T, string& F);
+	Bus(const Bus& bus);
 	~Bus();
 
 	virtual string getinfo() override;

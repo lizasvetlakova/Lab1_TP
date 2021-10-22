@@ -55,14 +55,13 @@ void Keeper::remove(int index) {
 		prev = tmp;
 		tmp = tmp->next;
 	}
-	if (tmp == prev) { //когда удаляем первый элемент = tmp
+	if (tmp == prev) { //когда удаляем первый элемент tmp = prev = head
 		head = tmp->next;
 	}
 	else {
 		prev->next = tmp->next; //предыдущий ссылается на следующий за удаляемым элементом
 	}
 	tmp->value->~Base();
-	delete tmp->value;
 	delete tmp;
 	size--;
 }
@@ -72,7 +71,6 @@ void Keeper::erase() {
 	for (int i = 0; i < size; i++) {
 		Element* tmp = buf;
 		tmp->value->~Base();
-		delete tmp->value;
 		delete tmp;
 		buf = buf->next;
 	}

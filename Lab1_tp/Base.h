@@ -8,8 +8,8 @@ using namespace std;
 
 class Base {
 public:
-	Base() { cout << "Сработал конструктор класса Base" << endl; };
-	virtual ~Base() { cout << "Сработал деструктор класса Base" << endl; };
+	Base() { cout << "\nСработал конструктор абстрактного базового класса" << endl; };
+	virtual ~Base() { cout << "Сработал деструктор абстрактного базового класса" << endl; };
 
 	virtual string getinfo() = 0;
 	virtual void setinfo(ifstream& in) = 0;

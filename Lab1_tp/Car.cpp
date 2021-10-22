@@ -1,14 +1,22 @@
 ﻿#include "Car.h"
 
 Car::~Car() { 
-	tr.~Garage();
 	cout << "Сработал деструктор объекта автомобиль" << endl; 
 }
-
 Car::Car() {
 	volume = "Null";
 	color = type = "None";
 	cout << "Сработал конструктор объекта автомобиль" << endl;
+}
+Car::Car(string& B, string& M, string& V, string& C, string& T) {
+	set_brand(B);
+	set_model(M);
+	volume = V; color = C; type = T;
+	cout << "Сработал конструктор объекта автомобиль" << endl;
+}
+Car::Car(const Car& car) {
+	Garage(car.tr);
+	volume = car.volume; color = car.color; type = car.type;
 }
 
 void Car::set_brand(string& Brand) { 
@@ -66,25 +74,47 @@ void Car::setinfo(ifstream& in) {
 
 void Car::change() {
 	string s;
-	cout << endl << "Введите марку: ";
-	cin >> s;
-	set_brand(s);
-
-	cout << endl << "Введите модель: ";
-	cin >> s;
-	set_model(s);
-
-	cout << endl << "Введите объём двигателя(л): ";
-	cin >> s;
-	volume = s;
-
-	cout << endl << "Введите цвет: ";
-	cin >> s;
-	color = s;
-
-	cout << endl << "Введите тип КПП: ";
-	cin >> s;
-	type = s;
+	int c;
+	bool f = 1;
+	while (f) {
+		cout << "\nВыберите какой параметр нужно изменить:\n"
+			<< "1.Марка  2.Модель  3.Объем двигателя  4.Цвет  5.Тип КПП\n"
+			<< "6.Вернуться в меню\n\n" << ">> ";
+		cin >> c;
+		switch (c) {
+		default:
+			cout << "\nОшибка при выборе! Попробуйте снова.\n";
+			break;
+		case 1:
+			cout << endl  << "Введите марку: ";
+			cin >> s;
+			set_brand(s);
+			break;
+		case 2:
+			cout << endl  << "Введите модель: ";
+			cin >> s;
+			set_model(s);
+			break;
+		case 3:
+			cout << endl  << "Введите объём двигателя(л): ";
+			cin >> s;
+			volume = s;
+			break;
+		case 4:
+			cout << endl  << "Введите цвет: ";
+			cin >> s;
+			color = s;
+			break;
+		case 5:
+			cout << endl  << "Введите тип КПП: ";
+			cin >> s;
+			type = s;
+			break;
+		case 6:
+			f = 0;
+			break;
+		}
+	}
 }
 
 void Car::print() {
